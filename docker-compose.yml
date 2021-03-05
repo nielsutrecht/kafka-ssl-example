@@ -11,5 +11,13 @@ services:
     environment:
       KAFKA_ADVERTISED_HOST_NAME: 192.168.178.14
       KAFKA_ZOOKEEPER_CONNECT: zookeeper:2181
+      KAFKA_ssl_truststore_location: /secrets/kafka.server.truststore.jks
+      KAFKA_ssl_truststore_password: mysecretpassword
+      KAFKA_ssl_keystore_location: /secrets/kafka.server.keystore.jks
+      KAFKA_ssl_keystore_password: mysecretpassword
+      KAFKA_ssl_key_password: mysecretpassword
+      KAFKA_listeners: "PLAINTEXT://:9092,SSL://:9093"
+      KAFKA_advertised_listeners: "PLAINTEXT://localhost:9092,SSL://localhost:9093"
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
+      - ./secrets:/secrets
