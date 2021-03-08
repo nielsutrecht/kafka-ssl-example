@@ -64,8 +64,8 @@ public class Config {
             config.put(SSL_TRUSTSTORE_LOCATION_CONFIG, CLIENT_TRUSTSTORE);
             config.put(SSL_TRUSTSTORE_PASSWORD_CONFIG,  PASSWORD);
 
-//            config.put(SSL_KEYSTORE_LOCATION_CONFIG, CLIENT_KEYSTORE);
-//            config.put(SSL_KEYSTORE_PASSWORD_CONFIG, PASSWORD);
+            config.put(SSL_KEYSTORE_LOCATION_CONFIG, CLIENT_KEYSTORE);
+            config.put(SSL_KEYSTORE_PASSWORD_CONFIG, PASSWORD);
             config.put(SSL_KEY_PASSWORD_CONFIG, PASSWORD);
         }
     }

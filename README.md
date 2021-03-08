@@ -12,4 +12,6 @@ You can start Kafka + Zookeeper locally with docker-compose:
 
     docker-compose -f docker-compose-single-broker.yml up
     
+## Test connectivity
 
+    openssl s_client -connect localhost:9093.

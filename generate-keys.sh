@@ -13,8 +13,8 @@ keytool -keystore secrets/kafka.client.truststore.jks -alias CARoot -importcert 
 keytool -keystore secrets/kafka.server.truststore.jks -alias CARoot -importcert -file secrets/ca-cert -storepass $PASSWORD -noprompt
 
 # Create keystores with 'localhost' certificates for the client and server
-keytool -keystore secrets/kafka.server.keystore.jks -alias localhost -keyalg RSA -validity $VALIDITY -genkey -storepass $PASSWORD -dname "CN=John Doe, OU=OrganizationUnit, O=Organization, L=City, ST=State, C=US"
-keytool -keystore secrets/kafka.client.keystore.jks -alias localhost -keyalg RSA -validity $VALIDITY -genkey -storepass $PASSWORD -dname "CN=John Doe, OU=OrganizationUnit, O=Organization, L=City, ST=State, C=US"
+keytool -keystore secrets/kafka.server.keystore.jks -alias localhost -keyalg RSA -validity $VALIDITY -genkey -storepass $PASSWORD -dname "CN=localhost, OU=OrganizationUnit, O=Organization, L=City, ST=State, C=US"
+keytool -keystore secrets/kafka.client.keystore.jks -alias localhost -keyalg RSA -validity $VALIDITY -genkey -storepass $PASSWORD -dname "CN=localhost, OU=OrganizationUnit, O=Organization, L=City, ST=State, C=US"
 
 #Export the unsigned 'localhost' certificates for client and server
 keytool -keystore secrets/kafka.server.keystore.jks -alias localhost -certreq -file secrets/cert-file-server -storepass $PASSWORD -noprompt
